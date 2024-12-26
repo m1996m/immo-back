@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: 'Gestion_immobiliere'
+    restart: 'always'
+    environment:
+      - 'POSTGRES_DB=immo'
+      - 'POSTGRES_PASSWORD=root'
+      - 'POSTGRES_USER=postgres'
+    ports:
+      - '5437:5432'
+
+  adminer:
+    image: adminer
+    container_name: Immo
+    restart: always
+    ports:
+      - '8089:8080'
